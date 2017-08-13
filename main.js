@@ -1,6 +1,7 @@
-// 1. First select and store the elements you'll be working with
+// 1. First select ad store the elements you'll be working with
 let display = document.querySelector('#display')
 let textValue = document.querySelector('#TextValue')
+let token = '?client_id=095fe1dcd09eb3d0e1d3d89c76f5618f&q'
 
 // 2. Create your `keydown` event for getting the user's search term
 
@@ -33,11 +34,20 @@ fetch(`https://api.soundcloud.com/tracks?client_id=095fe1dcd09eb3d0e1d3d89c76f56
 function moreInfo(data){
   displayResults="";
   for(i=0; i<data.length; i++){
+
+    var songLink = `${data[i].stream_url}`
+
     displayResults += `<div class="w3-card-4">
                   <img class="albumArt" src="${data[i].artwork_url}"/>
-                  <h6><b>Title:</b>  ${data[i].title}</h6>
-                  <p><b>Artist:</b>  ${data[i].user.username}</p>
-                  </div>`
+                  <p> <b>Title: </b>  ${data[i].title}</p>
+                  <p> <b>Artist: </b>  ${data[i].user.username}</p>
+                  </div>
+
+                  <div class="music-container">
+                    <audio class="music-player" controls="controls" src="${songLink}${token}"></audio>
+                  </div>
+
+                  `
   }
    display.innerHTML = displayResults
 }
