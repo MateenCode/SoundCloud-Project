@@ -1,5 +1,6 @@
 ## XO Sound Radio
 
+A Music Streaming application that fetchs soundclouds API and creates a streaming site that lets users search, play, and download songs.
 
 
 ## ScreenShots
