@@ -42,7 +42,6 @@ fetch(`http://api.soundcloud.com/users/${token}${event}`) //API address used to 
 
 // Another Fetch request that uses the ID to search for unique track
 
-
 function TrackInfo(userID){
 
   fetch(`http://api.soundcloud.com/users/${userID}/tracks/${token}`)
