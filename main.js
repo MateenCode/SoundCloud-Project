@@ -1,4 +1,5 @@
 // Element im working with
+
 let display = document.querySelector('#display');
 let textValue = document.querySelector('#TextValue');
 let searchLogo = document.querySelector('.searchLogo');
@@ -7,6 +8,7 @@ let token = '?client_id=095fe1dcd09eb3d0e1d3d89c76f5618f&q=';
 
 
 // key down event for enter, pass down ID value
+
   textValue.addEventListener('keydown', function(event){
 
   if(event.keyCode === 13){
@@ -23,6 +25,7 @@ let token = '?client_id=095fe1dcd09eb3d0e1d3d89c76f5618f&q=';
 
 
 // fetch API pass down artist event and stores users ID
+
 function getInfo(event){
 fetch(`http://api.soundcloud.com/users/${token}${event}`) //API address used to grab info
       .then( function(response) {
