@@ -14,7 +14,7 @@ let token = '?client_id=095fe1dcd09eb3d0e1d3d89c76f5618f&q=';
   if(event.keyCode === 13){
 
     display.textContent = ""
-    
+
     event.preventDefault();
 
     return(getInfo(event.target.value));
